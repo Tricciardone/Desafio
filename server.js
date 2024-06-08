@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 const ProductModel = require('./models/Product');
-const UserModel = require('./models/User');
+const UserModel = require('./models/user');
 
 const app = express();
 const PORT = 3000;
@@ -106,3 +106,4 @@ app.get('/logout', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor Express escuchando en el puerto ${PORT}`);
 });
+

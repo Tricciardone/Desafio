@@ -4,7 +4,7 @@ const session = require('express-session');
 const bcrypt = require('bcrypt');
 const fs = require('fs');
 const ProductModel = require('./models/Product');
-const UserModel = require('./models/User'); // Modelo de usuario que definiremos más adelante
+const UserModel = require('./models/user'); // Modelo de usuario que definiremos más adelante
 
 const app = express();
 const PORT = 3000; // Puerto en el que tu servidor Express estará escuchando
