@@ -27,6 +27,9 @@ db.once('open', () => {
 });
 
 // Configuración de Passport
+require('./config/passport')(passport);
+require('./config/passport-jwt')(passport);
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -65,6 +68,10 @@ passport.use(new GitHubStrategy({
         done(error);
     }
 }));
+
+// Rutas de sesión
+const sessions = require('./routes/api/sessions');
+app.use('/api/sessions', sessions);
 
 // Ruta para autenticación con GitHub
 app.get('/auth/github', passport.authenticate('github'));
